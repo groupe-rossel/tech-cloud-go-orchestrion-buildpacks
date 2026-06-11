@@ -1,7 +1,7 @@
 api = "0.7"
 
 [buildpack]
-id = "com.custom.orchestrion"
+id = "be.rossel.tech.orchestrion"
 version = "1.0.0"
 name = "Datadog Orchestrion Installer"
 
