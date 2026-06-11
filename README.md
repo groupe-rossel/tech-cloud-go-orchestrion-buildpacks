@@ -128,7 +128,7 @@ For issues, questions, or feature requests:
 ## 📚 Resources
 
 - [Cloud Native Buildpacks Documentation](https://buildpacks.io/docs/)
-- [Datadog Orchestrion Documentation](https://docs.datadoghq.com/orchestrion/)
+- [Datadog Orchestrion Documentation](https://github.com/datadog/orchestrion/)
 - [Paketo Buildpacks](https://paketo.io/)
 - [Buildpack Specifications](https://github.com/buildpacks/spec)
 
