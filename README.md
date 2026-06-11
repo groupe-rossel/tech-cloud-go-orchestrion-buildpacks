@@ -2,11 +2,11 @@
 
 [![Buildpack](https://img.shields.io/badge/buildpack-0.7-blue)](https://buildpacks.io/docs/buildpack-api/) [![Go](https://img.shields.io/badge/go-1.21%2B-00ADD8?logo=go&logoColor=white)](https://go.dev) [![Datadog](https://img.shields.io/badge/datadog-orchestrion-632CA6?logo=datadog&logoColor=white)](https://docs.datadoghq.com/orchestrion/)
 
-**A Cloud Native Buildpack for installing [Datadog Orchestrion](https://docs.datadoghq.com/orchestrion/) in Go applications**
+**A Cloud Native Buildpack for installing [Datadog Orchestrion](https://github.com/datadog/orchestrion/) in Go applications**
 
 ## 📋 About
 
-This buildpack automates the installation of [Datadog Orchestrion](https://docs.datadoghq.com/orchestrion/) as part of your Cloud Native Buildpacks build process. It's designed specifically for Go applications and ensures that Orchestrion is available during both build and runtime phases.
+This buildpack automates the installation of [Datadog Orchestrion](https://github.com/datadog/orchestrion/) as part of your Cloud Native Buildpacks build process. It's designed specifically for Go applications and ensures that Orchestrion is available during both build and runtime phases.
 
 Orchestrion is Datadog's internal service discovery tool that helps manage and monitor containerized workloads, making it easier to integrate with Datadog's APM, logs, and infrastructure monitoring.
 
