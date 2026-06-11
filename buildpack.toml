@@ -1,0 +1,11 @@
+api = "0.7"
+
+[buildpack]
+id = "com.custom.orchestrion"
+version = "1.0.0"
+name = "Datadog Orchestrion Installer"
+
+[[stacks]]
+id = "io.buildpacks.stacks.bionic"
+[[stacks]]
+id = "io.buildpacks.stacks.jammy"

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [ -f "go.mod" ]; then
+  exit 0
+else
+  exit 100
+fi

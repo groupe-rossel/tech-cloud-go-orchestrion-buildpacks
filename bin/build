@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+set -e
+
+LAYERS_DIR="$1"
+ORCH_LAYER="$LAYERS_DIR/orchestrion"
+
+echo "---> Initialisation de Datadog Orchestrion Buildpack"
+
+# 1. Déclarer la couche pour le cache (accélère drastiquement la CI)
+cat > "$ORCH_LAYER.toml" <<EOF
+[types]
+build = true
+cache = true
+launch = false
+EOF
+
+# 2. Installer Orchestrion s'il n'est pas déjà dans le cache
+if [ -f "$ORCH_LAYER/bin/orchestrion" ]; then
+    echo "-----> Binaire Orchestrion trouvé dans le cache"
+else
+    echo "-----> Téléchargement et installation d'Orchestrion..."
+    mkdir -p "$ORCH_LAYER/bin"
+    export GOBIN="$ORCH_LAYER/bin"
+    go install github.com/DataDog/orchestrion@latest
+fi
+
+# 3. Exposer le binaire dans le PATH pour Paketo Go Build
+mkdir -p "$ORCH_LAYER/env.build"
+echo -n "$ORCH_LAYER/bin" > "$ORCH_LAYER/env.build/PATH.prepend"
+
+exit 0
