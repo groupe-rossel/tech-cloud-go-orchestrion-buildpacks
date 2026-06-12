@@ -26,6 +26,7 @@ fi
 
 # 3. Exposer le binaire dans le PATH pour Paketo Go Build
 mkdir -p "$ORCH_LAYER/env.build"
+mkdir -p "$ORCH_LAYER/env.launch"
 echo -n "$ORCH_LAYER/bin" > "$ORCH_LAYER/env.build/PATH.prepend"
-
+echo -n "-a -toolexec='$ORCH_LAYER/bin/orchestrion toolexec'" > "$ORCH_LAYER/env.launch/BP_GO_BUILD_FLAGS.prepend"
 exit 0
