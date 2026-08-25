@@ -21,7 +21,8 @@ else
     echo "-----> Téléchargement et installation d'Orchestrion..."
     mkdir -p "$ORCH_LAYER/bin"
     export GOBIN="$ORCH_LAYER/bin"
-    go install github.com/DataDog/orchestrion@latest
+    ORCHESTRION_VERSION=$(cat go.mod |grep "github.com/DataDog/orchestrion"| cut -d' ' -f2)
+    go install "github.com/DataDog/orchestrion@${ORCHESTRION_VERSION}"
 fi
 
 # 3. Exposer le binaire dans le PATH pour Paketo Go Build
